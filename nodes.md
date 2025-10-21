@@ -1,17 +1,50 @@
-# Node Reference
+# Node Descriptions
 
-| Node | Purpose | Key Parameters | Notes |
-|------|---------|----------------|-------|
-| Trigger | Starts the workflow on demand | Input: ticker symbol | Use Manual Trigger for testing. |
-| HTTP Request (NSE) | Fetch latest stock data | Method: GET; URL: NSE endpoint; Query: symbol | Ensure compliance with NSE terms; consider caching. |
-| Code | Compute value indicators | Inputs: price, EPS, ROE, etc. | JavaScript in n8n Code node to derive metrics. |
-| OpenAI (Chat) | Generate plain-English summary | Model: GPT-4/Turbo; Prompt template | Include computed metrics and disclaimers. |
-| Set/Function | Normalize fields | Mapping of raw -> normalized keys | Keeps downstream nodes consistent. |
-| Merge/IF | Control flow based on data quality | Conditions on null/thresholds | Route to fallback or error summary if needed. |
-| Markdown/HTML | Produce readable output | Template with metrics table | For rendering in n8n execution. |
+## Node List and Descriptions:
 
-References
-- n8n Docs: https://docs.n8n.io/
-- HTTP Request: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httpRequest/
-- Code Node: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.code/
-- OpenAI: https://docs.n8n.io/integrations/builtin/ai-openai/
+### 1. When Chat Message Received (Trigger Node)
+
+**Role:** Listens for user input to start the analysis workflow.
+
+**Screenshot suggestion:** Show the chat window and trigger configuration.
+
+### 2. Workflow Configuration (Manual Node)
+
+**Role:** Allows you to manually trigger the workflow for testing or demonstration purposes.
+
+**Screenshot suggestion:** Show configuration and manual trigger option.
+
+### 3. Fetch NSE Stock Data (API Integration Node)
+
+**Role:** Connects to the National Stock Exchange API, fetches the latest financial data for the target equity.
+
+**Screenshot suggestion:** Show node setup with API details and retrieved data example.
+
+### 4. Stock Analysis Agent (Custom AI Logic Node)
+
+**Role:** Processes stock data, applies value-investing calculations (margin of safety, P/E, P/B, debt ratios), and organizes for further analysis.
+
+**Screenshot suggestion:** Display node internal logic setup and data flow.
+
+### 5. OpenAI GPT-4 Turbo (AI Summarizer Node)
+
+**Role:** Summarizes all findings and presents analysis in readable, non-technical language. Handles token usage and returns clear output.
+
+**Screenshot suggestion:** Show completion logs, output, and success status.
+
+### 6. Memory/Tool/Output Parser (Supporting Nodes)
+
+**Role:** Provide state management, auxiliary functions (e.g., formatting data), and handle workflow output.
+
+---
+
+## Sample Markdown Table for Node Documentation:
+
+| Node Name                    | Function                                                           |
+|------------------------------|--------------------------------------------------------------------||
+| When Chat Message Received   | Triggers workflow on user input                                    |
+| Workflow Configuration       | Allows manual/test workflow trigger                                |
+| Fetch NSE Stock Data         | Fetches live stock data from NSE                                   |
+| Stock Analysis Agent         | Applies investment scoring, value metrics                          |
+| OpenAI GPT-4 Turbo           | Summarizes results in clear, readable language                     |
+| Memory/Tool/Output Parser    | Supports data flow, formatting, and output                         |
