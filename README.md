@@ -47,7 +47,7 @@ This project represents my commitment to ethics, transparent workflow automation
 
 ### 1. Trigger Node - Chat Message Received
 
-![Trigger Node](screenshots/01_trigger_node.jpg)
+![Trigger Node]
 
 *Figure 2: Chat trigger configuration for receiving user stock analysis requests*
 
