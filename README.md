@@ -8,7 +8,7 @@ This workflow fetches live stock data from NSE, processes multiple key value ind
 
 ### Complete Workflow Architecture
 
-![Complete Workflow](screenshots/screenshots/00_complete_workflow.png)
+![Complete Workflow](screenshots/screenshots/00_complete_workflow.jpg)
 *Figure 1: Complete n8n workflow showing all nodes and their connections for Indian stock analysis*
 
 - **Trigger & Automate:** Start the workflow with a simple chat command (e.g., "Analyze RELIANCE stock").
@@ -38,52 +38,64 @@ This project represents my commitment to ethics, transparent workflow automation
 To use this workflow, import IndianStockAnalyzer-workflow.json into your n8n account.
 
 1) In n8n, go to Import from File and select the JSON.
-2) Review environment variables (API keys, NSE endpoints) and credentials.
-3) Activate the workflow and trigger it with a ticker symbol input.
+2) Set your API Keys (OpenAI API key, NSE endpoints, if needed).
+3) Test the Trigger Node and input "Analyze [STOCK_SYMBOL] stock."
+4) Review the logs, execution time, and output from the GPT-4 Turbo node.
 
-![Trigger Node Configuration](screenshots/screenshots/01_trigger_node.png)
-*Figure 2: Chat trigger node configuration for initiating stock analysis*
+---
 
 ## Workflow Components
 
-### 1. Workflow Configuration
+### 1. Trigger Node - Chat Message Received
 
-![Workflow Config](screenshots/screenshots/02_workflow_config.png)
-*Figure 3: Workflow settings and execution parameters*
+![Trigger Node Configuration](screenshots/screenshots/01_trigger_node.jpg)
+*Figure 2: Chat interface configuration showing how user messages trigger the workflow*
 
-The workflow is configured with proper error handling, execution timeout, and logging settings to ensure reliable operation.
+The workflow starts when a user sends a chat message requesting stock analysis.
 
-### 2. NSE Data Fetching
+### 2. Workflow Configuration
 
-![NSE API Node](screenshots/screenshots/03_nse_api_node.png)
-*Figure 4: NSE API integration node for fetching live market data*
+![Workflow Config](screenshots/screenshots/02_workflow_config.jpg)
+*Figure 3: Manual workflow configuration interface for testing and development*
 
-This node connects to the NSE API to retrieve real-time stock information including price, volume, and fundamental metrics.
+Configure workflow settings, test inputs, and debugging options.
 
-### 3. Analysis Agent
+### 3. NSE API Integration
 
-![Analysis Agent](screenshots/screenshots/04_analysis_agent.png)
-*Figure 5: AI analysis agent configuration and processing logic*
+![NSE API Node](screenshots/screenshots/03_nse_api_node.jpg)
+*Figure 4: NSE API integration showing live data retrieval configuration*
 
-The analysis agent processes the raw market data using value investing principles and prepares it for AI interpretation.
+Fetches real-time stock data from the National Stock Exchange of India API.
 
-### 4. GPT-4 Summarizer
+### 4. Stock Analysis Agent
 
-![GPT-4 Summarizer](screenshots/screenshots/05_gpt4_summarizer.png)
-*Figure 6: OpenAI GPT-4 node for generating investment insights*
+![Analysis Agent](screenshots/screenshots/04_analysis_agent.jpg)
+*Figure 5: Value investing analysis engine implementing Benjamin Graham's principles*
 
-The GPT-4 Turbo model generates clear, actionable investment insights based on the processed fundamental data.
+Applies value investing calculations including:
+- P/E Ratio Analysis
+- Book Value Assessment
+- Fair Value Calculation
+- Safety Margin Determination
+- Investment Recommendation
 
-### 5. Supporting Nodes
+### 5. GPT-4 Turbo Summarizer
 
-![Supporting Nodes](screenshots/screenshots/06_supporting_nodes.png)
+![GPT-4 Summarizer](screenshots/screenshots/05_gpt4_summarizer.jpg)
+*Figure 6: OpenAI GPT-4 Turbo integration for natural language output generation*
+
+Converts technical analysis into clear, actionable insights using AI.
+
+### 6. Supporting Infrastructure
+
+![Supporting Nodes](screenshots/screenshots/06_supporting_nodes.jpg)
 *Figure 7: Helper nodes for data transformation and formatting*
 
 Additional nodes handle data transformation, formatting, and output preparation.
 
 ### 6. Workflow Execution
 
-![Workflow Execution](screenshots/screenshots/workflow_execution.png)
+![Workflow Execution](screenshots/screenshots/workflow_execution.jpg)
 *Figure 8: Live workflow execution showing real-time processing and results*
 
 Watch the workflow in action as it processes stock data and generates insights in real-time.
