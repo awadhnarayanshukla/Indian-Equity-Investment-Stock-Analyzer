@@ -1,0 +1,6 @@
+{
+  "stub": true,
+  "name": "IndianStockAnalyzer Workflow (placeholder)",
+  "note": "This repository intentionally does not include the actual n8n workflow JSON. Replace this file with your exported workflow from n8n to use in production.",
+  "instructions": "In n8n, export your workflow as JSON and save it here as IndianStockAnalyzer-workflow.json"
+}
