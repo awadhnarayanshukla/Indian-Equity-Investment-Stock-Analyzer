@@ -6,7 +6,7 @@ This directory contains visual documentation of the Indian Equity Investment Sto
 
 ## Complete Workflow Overview
 
-### 00_complete_workflow.png
+### 00_complete_workflow.jpg
 **Description:** Full end-to-end workflow architecture diagram showing all nodes and their connections.
 
 **Details:**
@@ -21,7 +21,7 @@ This directory contains visual documentation of the Indian Equity Investment Sto
 
 ## Node-Specific Screenshots
 
-### 01_trigger_node.png
+### 01_trigger_node.jpg
 **Node:** When Chat Message Received (Trigger Node)
 
 **Description:** Configuration and setup of the chat message trigger that initiates the workflow.
@@ -36,7 +36,7 @@ This directory contains visual documentation of the Indian Equity Investment Sto
 
 ---
 
-### 02_workflow_config.png
+### 02_workflow_config.jpg
 **Node:** Workflow Configuration (Manual Node)
 
 **Description:** Manual workflow trigger and configuration interface.
@@ -51,99 +51,97 @@ This directory contains visual documentation of the Indian Equity Investment Sto
 
 ---
 
-### 03_nse_api_node.png
+### 03_nse_api_node.jpg
 **Node:** Fetch NSE Stock Data (API Integration Node)
 
 **Description:** NSE API integration setup and live data retrieval demonstration.
 
 **Details:**
-- Shows API endpoint configuration
-- Displays authentication and header setup
-- Demonstrates sample API response with stock data
-- Includes error handling configuration
-- Shows data fields: current price, 52-week high/low, P/E ratio, P/B ratio, market cap, debt levels
+- Shows NSE India API endpoint configuration
+- Displays real-time stock data fetch parameters
+- Demonstrates data extraction and parsing logic
+- Includes error handling and fallback mechanisms
+- Shows sample response data structure
 
 **Workflow Stage:** Data Acquisition
 
 ---
 
-### 04_analysis_agent.png
-**Node:** Stock Analysis Agent (Custom AI Logic Node)
+### 04_analysis_agent.jpg
+**Node:** Stock Value Analysis Agent (Core Analysis Engine)
 
-**Description:** Custom AI agent logic for value investing calculations and stock analysis.
+**Description:** Value investing analysis agent configuration and calculation logic.
 
 **Details:**
-- Shows implementation of value investing formulas
-- Displays margin of safety calculations
-- Demonstrates intrinsic value computation logic
-- Shows debt-to-equity ratio analysis
-- Includes Benjamin Graham's investment criteria implementation
-- Visualizes data transformation and scoring algorithms
+- Shows Benjamin Graham's value investing formula implementation
+- Displays P/E ratio, EPS, and book value calculations
+- Demonstrates fair value computation logic
+- Shows safety margin calculation (current price vs. fair value)
+- Includes data validation and error handling
+- Demonstrates recommendation engine logic (Strong Buy, Buy, Hold, Sell)
 
-**Workflow Stage:** Analysis & Computation
+**Workflow Stage:** Analysis & Calculation
 
 ---
 
-### 05_gpt4_summarizer.png
-**Node:** OpenAI GPT-4 Turbo (AI Summarizer Node)
+### 05_gpt4_summarizer.jpg
+**Node:** GPT-4 Turbo Summarizer (Natural Language Output)
 
-**Description:** GPT-4 Turbo configuration for generating natural language investment summaries.
+**Description:** GPT-4 Turbo integration for generating natural language investment summaries.
 
 **Details:**
 - Shows OpenAI API configuration
-- Displays prompt engineering for investment analysis
-- Demonstrates model parameters (temperature, max tokens, etc.)
-- Includes sample AI-generated summary output
-- Shows how technical metrics are translated to readable recommendations
+- Displays prompt engineering for financial analysis
+- Demonstrates structured data to narrative conversion
+- Shows model parameters (temperature, tokens, etc.)
+- Includes sample output formatting
 
-**Workflow Stage:** Natural Language Generation / Final Output
+**Workflow Stage:** Natural Language Generation
 
 ---
 
-### 06_supporting_nodes.png
-**Node:** Memory/Tool/Output Parser (Supporting Nodes)
+### 06_supporting_nodes.jpg
+**Node:** Supporting Infrastructure Nodes
 
-**Description:** Supporting infrastructure including memory management, data parsers, and output formatters.
+**Description:** Various supporting nodes that handle memory, parsing, and output processing.
 
 **Details:**
-- Shows memory/state management configuration
-- Displays data transformation tools
-- Demonstrates output formatting logic
-- Includes error handling and logging setup
-- Shows connections between major nodes
+- Chat Memory Node: Maintains conversation context
+- Message Parsing Nodes: Extract stock symbols from user input
+- Output Formatting Nodes: Structure final response
+- Error Handling Nodes: Manage failures gracefully
+- Logging and Debugging Nodes: Track workflow execution
 
-**Workflow Stage:** Data Flow Management
+**Workflow Stage:** Infrastructure & Support
 
 ---
 
-## Additional Workflow Documentation
-
-### workflow_execution.png
-**Description:** Live workflow execution example showing real-time data flow and processing.
+### workflow_execution.jpg
+**Description:** Complete workflow execution demonstration with live data.
 
 **Details:**
-- Captures a live run with actual stock data
-- Shows data passing through each node
-- Demonstrates successful execution from input to output
-- Highlights execution timing and performance metrics
-- Useful for troubleshooting and performance optimization
+- Shows actual workflow run with real stock data
+- Displays data flow through all nodes
+- Demonstrates successful execution from trigger to output
+- Shows final formatted response
+- Includes execution timing and performance metrics
 
-**Workflow Stage:** Live Execution Example
+**Workflow Stage:** Complete Execution Demo
 
 ---
 
-## Screenshot Organization
+## Screenshots Quick Reference
 
-| Screenshot File               | Node/Component                        | Purpose                                          |
-|-------------------------------|---------------------------------------|--------------------------------------------------|
-| 00_complete_workflow.png      | Full Workflow                         | System architecture overview                     |
-| 01_trigger_node.png           | Chat Message Trigger                  | Entry point configuration                        |
-| 02_workflow_config.png        | Manual Configuration                  | Testing and development setup                    |
-| 03_nse_api_node.png           | NSE API Integration                   | Live data retrieval configuration                |
-| 04_analysis_agent.png         | Stock Analysis Agent                  | Value investing calculations and logic           |
-| 05_gpt4_summarizer.png        | GPT-4 Turbo Summarizer                | AI-powered natural language output               |
-| 06_supporting_nodes.png       | Supporting Infrastructure             | Memory, parsing, and output handling             |
-| workflow_execution.png        | Complete Execution                    | Live demonstration of full workflow              |
+| Screenshot File               | Node/Component                        | Description                                       |
+|-------------------------------|---------------------------------------|---------------------------------------------------|
+| 00_complete_workflow.jpg      | Full Workflow                         | Complete workflow architecture diagram            |
+| 01_trigger_node.jpg           | Chat Message Trigger                  | Entry point configuration                         |
+| 02_workflow_config.jpg        | Manual Configuration                  | Testing and development setup                     |
+| 03_nse_api_node.jpg           | NSE API Integration                   | Live data retrieval configuration                 |
+| 04_analysis_agent.jpg         | Stock Analysis Agent                  | Value investing calculations and logic            |
+| 05_gpt4_summarizer.jpg        | GPT-4 Turbo Summarizer                | AI-powered natural language output                |
+| 06_supporting_nodes.jpg       | Supporting Infrastructure             | Memory, parsing, and output handling              |
+| workflow_execution.jpg        | Complete Execution                    | Live demonstration of full workflow               |
 
 ---
 
